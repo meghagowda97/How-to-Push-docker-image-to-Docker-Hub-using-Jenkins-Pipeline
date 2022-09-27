@@ -3,7 +3,7 @@ pipeline{
 	agent {label 'docker'}
 
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+		DOCKERHUB_CREDENTIALS=credentials('docker-rigistry')
 	}
 
 	stages {
@@ -11,14 +11,14 @@ pipeline{
 	    stage('gitclone') {
 
 			steps {
-				git 'https://github.com/shazforiot/nodeapp_test.git'
+				git 'https://github.com/meghagowda97/nodeapp_test.git'
 			}
 		}
 
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t thetips4you/nodeapp_test:latest .'
+				sh 'docker build -t meghadocker97/nodeapp_test:latest .'
 			}
 		}
 
